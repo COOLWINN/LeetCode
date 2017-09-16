@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * 006. ZigZag Conversion
  * --Problem Description:
@@ -34,9 +36,12 @@ public class Problem006 {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入字符串：");
+        String s = scanner.nextLine();
+        System.out.println("请输入行数：");
+        int numRows = scanner.nextInt();
         Problem006 test = new Problem006();
-        String s = "PAYPALISHIRING";
-        int numRows = 3;
         System.out.println(test.convert(s, numRows));
     }
 
