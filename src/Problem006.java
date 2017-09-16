@@ -13,32 +13,22 @@
  */
 public class Problem006 {
     public String convert(String s, int numRows) {
-        int n = s.length(), now = 0;
+        if (numRows <= 1) return s;
+        StringBuilder[] sb = new StringBuilder[numRows];
+        //初始化
+        for (int i = 0; i <numRows; i++) {
+            sb[i] = new StringBuilder("");
+        }
+        int increase = 0, index =0;
+        for (int i =0; i < s.length();i++) {
+            sb[index].append(s.charAt(i));
+            if (index==0) increase=1;
+            if (index == numRows-1) increase=-1;
+            index+=increase;
+        }
         StringBuilder result = new StringBuilder();
-
-        while (now < n) {
-            result.append(s.charAt(now));
-            now += (2*numRows-2);
-        }
-
-        for (int i =1; i < numRows-1;i++) {
-            int count = 0;
-            while (count < n) {
-                count++;
-                if (count % 2!=0) {
-                    now = (count - 1) * (numRows - 1) + i;
-                }else {
-                    now = (count - 1) * (numRows - 1) + numRows - i - 1;
-                }
-                if (now >= n) continue;
-                result.append(s.charAt(now));
-            }
-
-        }
-        now = numRows-1;
-        while (now < n) {
-            result.append(s.charAt(now));
-            now += (2 * numRows - 2);
+        for (int i =0; i < numRows; i++) {
+            result.append(sb[i]);
         }
         return result.toString();
     }
