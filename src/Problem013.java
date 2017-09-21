@@ -8,7 +8,7 @@ import java.util.Scanner;
  * Given a roman numeral, convert it to an integer.
  * Input is guaranteed to be within the range from 1 to 3999.
  */
-public class Problem13 {
+public class Problem013 {
     public int romanToInt(String s) {
         Map<Character, Integer> map = new HashMap<>();
         map.put('I',1);
@@ -32,7 +32,7 @@ public class Problem13 {
     }
 
     public static void main(String[] args) {
-        Problem13 test = new Problem13();
+        Problem013 test = new Problem013();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input a Roman numeral:");
         String s = scanner.nextLine();
