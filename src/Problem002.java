@@ -10,24 +10,6 @@
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
  * Output: 7 -> 0 -> 8
  */
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
-
-    @Override
-    public String toString() {
-        ListNode node = this;
-        StringBuilder builder = new StringBuilder();
-        builder.append(node.val);
-        while (node.next != null) {
-            node = node.next;
-            builder.append("->");
-            builder.append(node.val);
-        }
-        return builder.toString();
-    }
-}
 public class Problem002 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);
